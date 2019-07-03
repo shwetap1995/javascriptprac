@@ -1,0 +1,34 @@
+<html>
+	<body>
+	<input type="textbox"></input>
+	<input type="textbox"></input>
+	<input type="textbox"></input>
+	<button onclick="btnCount()">count</button>
+	<script>
+		function btnCount() {
+		var txtValue = new Array();
+		txtValue=document.getElementsByTagName("input");
+		var counter = 0;	
+			for(var i = 0; i< txtValue.length; i++) {
+			var x= txtValue[i].value;
+			if(x % 2 == 0) {
+			counter++;
+			}
+		}
+		
+			/*var y= txtValue[1].value;
+			if(y % 2 == 0) {
+			counter++;
+			}
+			var z= txtValue[2].value;
+			if(z % 2 == 0) {
+			counter++;
+			}*/
+			alert(counter);
+		}
+		
+	</script>
+	</body>
+</html>
+
+		

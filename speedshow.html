@@ -1,0 +1,28 @@
+<html>
+	<body>
+		
+		<button type="button" onclick="increment()">+</button>
+		speed
+		<button id="minus" type="button" onclick="decrement()">-</button>
+		<p id="demo">speed is..</p>
+		<script>
+		var x = 0;
+			function increment(){
+				document.getElementById("demo").innerHTML =  x=x+1;
+				}
+			function decrement(){
+				document.getElementById("demo").innerHTML =  x=x-1;
+				}
+				
+				if(x == 0)
+				{
+				document.getElementById("minus").disabled= true;
+				}
+				alert("hello");
+				else
+				{
+				document.getElementById("minus").disabled=false;
+				}
+</script>
+</body>
+</html>

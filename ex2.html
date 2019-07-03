@@ -1,0 +1,24 @@
+<html>
+	<body>
+	
+	<button>button1</button>
+	<button>button2</button>
+	<button>button3</button>
+	<button>button4</button>
+	<button>button5</button>
+	<br>
+	<p>this is the para 1</p>
+	<p>this is the para 2</p><br>
+	<div>this is div 1</div>
+	<div>this is div 2</div><br>
+	<input id="txt1" type="textbox"></input>
+	<button onclick="btnCount()">count</button>
+	<script>
+		function btnCount() {
+		var btn=document.getElementById("txt1").value;
+		var x = document.getElementsByTagName(btn).length;
+			alert(x);
+		}
+	</script>
+	</body>
+</html
