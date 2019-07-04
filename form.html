@@ -5,34 +5,18 @@
 	Gender:<input type="text"></input><br><br>
 	<select id="dropdown">
 	<option id="select">Select</option>
-  <option id="mumbai">Mumbai</option>
-  <option id="pune">Pune</option>
-  <option id="hyderabad">Hyderabad</option>
-  <option id="bangalore">Bangalore</option>
+  <option id="mumbai" value="100">Mumbai</option>
+  <option id="pune" value="200">Pune</option>
+  <option id="hyderabad" value="300">Hyderabad</option>
+  <option id="bangalore" value="400">Bangalore</option>
 </select><br><br>
 <button type="button" onclick="fare()">Calculate Fare</button>
 	<script>
 	function fare() {
 	var person = 4;
 	var ddl = document.getElementById("dropdown");
-	var selOption = ddl.options[ddl.selectedIndex].value;
-	alert(selOption);
-	if(selOption == "Mumbai") {
-	fareMumbai = person * 100;
-	alert(fareMumbai);
-	}
-	if(selOption == "Pune") {
-	farePune = person * 200;
-	alert(farePune);
-	}
-	if(selOption == "Hyderabad") {
-	fareHyderabad = person * 300;
-	alert(fareHyderabad);
-	}
-	if(selOption == "Bangalore") {
-	fareBangalore = person * 400;
-	alert(fareBangalore);
-	}
+	var selOption = ddl.options[ddl.selectedIndex].getAttribute('value');
+	alert(person*selOption);
 
 	}
 	</script>
