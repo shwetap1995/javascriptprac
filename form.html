@@ -10,38 +10,8 @@
 	   <th>Age</th>
 	   <th>Gender</th>
 	   <th>City</th>
-		<tr>
-            <td>
-               
-                <input type="text"></input>
-				</td>
-				<td>
-               
-                <input type="number" onkeypress="javascript:return isNumber(event)" /> 
-				</td>
-				<td>
-				
-                <select id="genderDropDown">
-                    <option value="select">Select</option>
-                    <option value="male" >Male</option>
-                   <!-- <option value="female">Female</option>
-                    <option value="other">Other</option>-->
-                </select>
-				</td>
-				<td>
-                
-                <select id="dropdown">
-                    <option id="select">Select</option>
-                    <option id="mumbai" value="100">Mumbai</option>
-                    <option id="pune" value="200">Pune</option>
-                    <option id="hyderabad" value="300">Hyderabad</option>
-                    <option id="bangalore" value="400">Bangalore</option>
-                </select>
-				</td>
-                <br>
-                <br>
-            </td>
-        </tr>
+		</tr>
+            
 </table>
        <br>
                 <button type="button" onclick="fare()">Calculate Fare</button>
@@ -59,36 +29,71 @@
             var rowCount = table.rows.length;
 			var row = table.insertRow(rowCount);
 			
-			var cell1 = row.insertCell(0);
-			var element1 = document.createElement("input");
-			element1.type = "text";
-			cell1.appendChild(element1);
+			var nameCell = row.insertCell(0);
+			var nameInput = document.createElement("input");
+			nameInput.type = "text";
+			nameCell.appendChild(nameInput);
 			
-			var cell2 = row.insertCell(1);
-			var element2 = document.createElement("input");
-			element2.type = "number";
-			cell2.appendChild(element2);
+			var ageCell = row.insertCell(1);
+			var ageInput = document.createElement("input");
+			ageInput.type = "number";
+			ageCell.appendChild(ageInput);
 							
-			var cell3 = row.insertCell(2);
-			 var element3 = document.createElement("select");
-			 select.setAttribute("id", "genderDropDown" );
+			var genderCell = row.insertCell(2);
+			 var genderSelect = document.createElement("select");
+		
 			   option = document.createElement("option");
 				option.setAttribute("value", "select");
 				option.innerHTML = "Select";
-			select.appendChild(option);
+			genderSelect.appendChild(option);
 			
 			option = document.createElement("option");
-			option.setAttribute("value", "Male");
+			option.setAttribute("value", "male");
 			option.innerHTML = "Male";
-			select.appendChild(option);
-			cell3.appendChild(element3);
+			genderSelect.appendChild(option);
 			
-			//var cell1 = row.insertCell(3);
+			option = document.createElement("option");
+			option.setAttribute("value", "female");
+			option.innerHTML = "Female";
+			genderSelect.appendChild(option);
+			
+			option = document.createElement("option");
+			option.setAttribute("value", "other");
+			option.innerHTML = "Other";
+			genderSelect.appendChild(option);
+			genderCell.appendChild(genderSelect);
+			
+			var cityCell = row.insertCell(3);
+			var citySelect = document.createElement("select");
+		
+			   option = document.createElement("option");
+				option.setAttribute("value", "select");
+				option.innerHTML = "Select";
+			citySelect.appendChild(option);
+			
+			option = document.createElement("option");
+			option.setAttribute("value", "mumbai");
+			option.innerHTML = "Mumbai";
+			citySelect.appendChild(option);
+			
+			option = document.createElement("option");
+			option.setAttribute("value", "pune");
+			option.innerHTML = "Pune";
+			citySelect.appendChild(option);
+			
+			option = document.createElement("option");
+			option.setAttribute("value", "hyderabad");
+			option.innerHTML = "Hyderabad";
+			citySelect.appendChild(option);
+			
+			option = document.createElement("option");
+			option.setAttribute("value", "bangalore");
+			option.innerHTML = "Bangalore";
+			citySelect.appendChild(option);
+			cityCell.appendChild(citySelect);
 			
 			
-
 		}
-
     </script>
 </body>
 
