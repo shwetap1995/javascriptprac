@@ -1,36 +1,35 @@
 <html>
 
 <body>
-    <table>
-        <tr>
+               <button type="button" onclick="addFiled()">Add Passenger</button>
+                <br>
+               
+       <table border="bold" id="tableId">
+	   <tr>
+	   <th>Name</th>
+	   <th>Age</th>
+	   <th>Gender</th>
+	   <th>City</th>
+		<tr>
             <td>
-                Name:</td>
-            <td>
+               
                 <input type="text"></input>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Age:</td>
-            <td>
-                <input type="number" onkeypress="javascript:return isNumber(event)" />
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Gender:</td>
-            <td>
+				</td>
+				<td>
+               
+                <input type="number" onkeypress="javascript:return isNumber(event)" /> 
+				</td>
+				<td>
+				
                 <select id="genderDropDown">
-                    <option id="select">Select</option>
-                    <option>Male</option>
-					<option>Female</option>
-					<option>Other</option>      
-            </td>
-        </tr>
-        <tr>
-            <td>
-                City:</td>
-            <td>
+                    <option value="select">Select</option>
+                    <option value="male" >Male</option>
+                   <!-- <option value="female">Female</option>
+                    <option value="other">Other</option>-->
+                </select>
+				</td>
+				<td>
+                
                 <select id="dropdown">
                     <option id="select">Select</option>
                     <option id="mumbai" value="100">Mumbai</option>
@@ -38,28 +37,58 @@
                     <option id="hyderabad" value="300">Hyderabad</option>
                     <option id="bangalore" value="400">Bangalore</option>
                 </select>
+				</td>
+                <br>
+                <br>
             </td>
         </tr>
-        <tr>
-            <td>
-                <br><button type="button" onclick="fare()">Calculate Fare</button>
-            </td>
-        </tr>
-    </table>
+</table>
+       <br>
+                <button type="button" onclick="fare()">Calculate Fare</button>
+       
+    
     <script>
         function fare() {
             var person = 4;
             var ddl = document.getElementById("dropdown");
             var selOption = ddl.options[ddl.selectedIndex].getAttribute('value');
             alert(person * selOption);
-			function isNumber(evt) {
-        var iKeyCode = (evt.which) ? evt.which : evt.keyCode
-        if (iKeyCode != 46 && iKeyCode > 31 && (iKeyCode < 48 || iKeyCode > 57))
-            return false;
+		}
+		function addFiled() {
+		var table = document.getElementById("tableId");
+            var rowCount = table.rows.length;
+			var row = table.insertRow(rowCount);
+			
+			var cell1 = row.insertCell(0);
+			var element1 = document.createElement("input");
+			element1.type = "text";
+			cell1.appendChild(element1);
+			
+			var cell2 = row.insertCell(1);
+			var element2 = document.createElement("input");
+			element2.type = "number";
+			cell2.appendChild(element2);
+							
+			var cell3 = row.insertCell(2);
+			 var element3 = document.createElement("select");
+			 select.setAttribute("id", "genderDropDown" );
+			   option = document.createElement("option");
+				option.setAttribute("value", "select");
+				option.innerHTML = "Select";
+			select.appendChild(option);
+			
+			option = document.createElement("option");
+			option.setAttribute("value", "Male");
+			option.innerHTML = "Male";
+			select.appendChild(option);
+			cell3.appendChild(element3);
+			
+			//var cell1 = row.insertCell(3);
+			
+			
 
-        return true;
-    }
-        }
+		}
+
     </script>
 </body>
 
