@@ -3,25 +3,37 @@
 	Name:<input type="text"></input><br><br>
 	Age:<input type="text"></input><br><br>
 	Gender:<input type="text"></input><br><br>
-	<select>
+	<select id="dropdown">
 	<option id="select">Select</option>
   <option id="mumbai">Mumbai</option>
   <option id="pune">Pune</option>
   <option id="hyderabad">Hyderabad</option>
-  <option value="bangalore">Bangalore</option>
+  <option id="bangalore">Bangalore</option>
 </select><br><br>
 <button type="button" onclick="fare()">Calculate Fare</button>
 	<script>
 	function fare() {
-	var sel = document.getElementsByTagName("option").length;
-	var opt;
-	for(var i = 0; i<=sel.options; i++) {
-		opt = sel.options[i];
-		if ( opt.selected === true ) {
-            alert(opt.values);
-        }
-	}	
-	
+	var person = 4;
+	var ddl = document.getElementById("dropdown");
+	var selOption = ddl.options[ddl.selectedIndex].value;
+	alert(selOption);
+	if(selOption == "Mumbai") {
+	fareMumbai = person * 100;
+	alert(fareMumbai);
+	}
+	if(selOption == "Pune") {
+	farePune = person * 200;
+	alert(farePune);
+	}
+	if(selOption == "Hyderabad") {
+	fareHyderabad = person * 300;
+	alert(fareHyderabad);
+	}
+	if(selOption == "Bangalore") {
+	fareBangalore = person * 400;
+	alert(fareBangalore);
+	}
+
 	}
 	</script>
 	</body>
