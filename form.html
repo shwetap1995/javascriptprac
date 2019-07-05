@@ -1,100 +1,111 @@
 <html>
+	<body>
+		<button type="button" onclick="addFiled()">Add Passenger</button>
+		<button type="button" onclick="deleteFiled()">delete Passenger</button>
+		<br>
 
-<body>
-               <button type="button" onclick="addFiled()">Add Passenger</button>
-                <br>
-               
-       <table border="bold" id="tableId">
-	   <tr>
-	   <th>Name</th>
-	   <th>Age</th>
-	   <th>Gender</th>
-	   <th>City</th>
-		</tr>
-            
-</table>
-       <br>
-                <button type="button" onclick="fare()">Calculate Fare</button>
-       
-    
-    <script>
-        function fare() {
-            var person = 4;
-            var ddl = document.getElementById("dropdown");
-            var selOption = ddl.options[ddl.selectedIndex].getAttribute('value');
-            alert(person * selOption);
-		}
-		function addFiled() {
-		var table = document.getElementById("tableId");
+			<table border="bold" id="tableId">
+				<tr>
+					<th>Name</th>
+					<th>Age</th>
+					<th>Gender</th>
+					<th>City</th>
+				</tr>
+
+			</table>
+			<br>
+				<button type="button" onclick="fare()">Calculate Fare</button>
+
+				<script>
+
+        function addFiled() {
+            var table = document.getElementById("tableId");
             var rowCount = table.rows.length;
-			var row = table.insertRow(rowCount);
-			
-			var nameCell = row.insertCell(0);
-			var nameInput = document.createElement("input");
-			nameInput.type = "text";
-			nameCell.appendChild(nameInput);
-			
-			var ageCell = row.insertCell(1);
-			var ageInput = document.createElement("input");
-			ageInput.type = "number";
-			ageCell.appendChild(ageInput);
-							
-			var genderCell = row.insertCell(2);
-			 var genderSelect = document.createElement("select");
-		
-			   option = document.createElement("option");
-				option.setAttribute("value", "select");
-				option.innerHTML = "Select";
-			genderSelect.appendChild(option);
-			
-			option = document.createElement("option");
-			option.setAttribute("value", "male");
-			option.innerHTML = "Male";
-			genderSelect.appendChild(option);
-			
-			option = document.createElement("option");
-			option.setAttribute("value", "female");
-			option.innerHTML = "Female";
-			genderSelect.appendChild(option);
-			
-			option = document.createElement("option");
-			option.setAttribute("value", "other");
-			option.innerHTML = "Other";
-			genderSelect.appendChild(option);
-			genderCell.appendChild(genderSelect);
-			
-			var cityCell = row.insertCell(3);
-			var citySelect = document.createElement("select");
-		
-			   option = document.createElement("option");
-				option.setAttribute("value", "select");
-				option.innerHTML = "Select";
-			citySelect.appendChild(option);
-			
-			option = document.createElement("option");
-			option.setAttribute("value", "mumbai");
-			option.innerHTML = "Mumbai";
-			citySelect.appendChild(option);
-			
-			option = document.createElement("option");
-			option.setAttribute("value", "pune");
-			option.innerHTML = "Pune";
-			citySelect.appendChild(option);
-			
-			option = document.createElement("option");
-			option.setAttribute("value", "hyderabad");
-			option.innerHTML = "Hyderabad";
-			citySelect.appendChild(option);
-			
-			option = document.createElement("option");
-			option.setAttribute("value", "bangalore");
-			option.innerHTML = "Bangalore";
-			citySelect.appendChild(option);
-			cityCell.appendChild(citySelect);
-			
-			
-		}
-    </script>
-</body>
+            var row = table.insertRow(rowCount);
 
-</html>
+            var nameCell = row.insertCell(0);
+            var nameInput = document.createElement("input");
+            nameInput.type = "text";
+            nameCell.appendChild(nameInput);
+
+            var ageCell = row.insertCell(1);
+            var ageInput = document.createElement("input");
+            ageInput.type = "number";
+            ageCell.appendChild(ageInput);
+
+            var genderCell = row.insertCell(2);
+            var genderSelect = document.createElement("select");
+
+            option = document.createElement("option");
+            option.setAttribute("value", "select");
+            option.innerHTML = "Select";
+            genderSelect.appendChild(option);
+
+            option = document.createElement("option");
+            option.setAttribute("value", "male");
+            option.innerHTML = "Male";
+            genderSelect.appendChild(option);
+
+            option = document.createElement("option");
+            option.setAttribute("value", "female");
+            option.innerHTML = "Female";
+            genderSelect.appendChild(option);
+
+            option = document.createElement("option");
+            option.setAttribute("value", "other");
+            option.innerHTML = "Other";
+            genderSelect.appendChild(option);
+            genderCell.appendChild(genderSelect);
+
+            var cityCell = row.insertCell(3);
+            var citySelect = document.createElement("select");
+
+            option = document.createElement("option");
+            option.setAttribute("value", "0");
+            option.innerHTML = "Select";
+            citySelect.appendChild(option);
+
+            option = document.createElement("option");
+            option.setAttribute("value", "100");
+            option.innerHTML = "Mumbai";
+            citySelect.appendChild(option);
+
+            option = document.createElement("option");
+            option.setAttribute("value", "200");
+            option.innerHTML = "Pune";
+            citySelect.appendChild(option);
+
+            option = document.createElement("option");
+            option.setAttribute("value", "300");
+            option.innerHTML = "Hyderabad";
+            citySelect.appendChild(option);
+
+            option = document.createElement("option");
+            option.setAttribute("value", "400");
+            option.innerHTML = "Bangalore";
+            citySelect.appendChild(option);
+            cityCell.appendChild(citySelect);
+
+        }
+		 function fare() {
+			var totalFare = 0;
+            var tbl = document.getElementById("tableId");
+			for(var i = 1; i < tbl.rows.length; i++) {	
+				var row =tbl.rows[1];
+				var destCell = row.cells[3];
+				var destChild = destCell.children;
+				var destSelect =destChild[0];
+				var selectedIndex = destSelect.selectedIndex;
+				var seletedOption = destSelect.options[selectedIndex];
+				var fareValue = seletedOption.getAttribute("value");
+				var fare = parseInt(fareValue);
+				 totalFare = totalFare + fare;
+				debugger;
+				}
+
+				alert(totalFare);
+		}
+						</script>
+					</body>
+
+				</html>
