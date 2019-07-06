@@ -1,8 +1,8 @@
 <html>
 
-<body>
+<body onload="myFunction()">
     <button type="button" onclick="addFiled()">Add Passenger</button>
-    <button type="button" onclick="deleteFiled()">delete Passenger</button>
+    <!--<button type="button" onclick="deleteFiled()">delete Passenger</button>-->
     <br>
 
     <table border="bold" id="tableId">
@@ -15,10 +15,17 @@
 
     </table>
     <br>
-    <button type="button" onclick="fare()">Calculate Fare</button>
+    <button id="fareButton" type="button" onclick="fare()">Calculate Fare</button>
 
     <script>
+		function myFunction() {
+			var x = document.getElementById("tableId").rows.length;
+			if(x == 1){
+				document.getElementById("fareButton").disabled = true;
+			}
+		}	
         function addFiled() {
+			document.getElementById("fareButton").disabled = false;
             var table = document.getElementById("tableId");
             var rowCount = table.rows.length;
             var row = table.insertRow(rowCount);
@@ -89,10 +96,11 @@
         }
 
         function fare() {
-            var totalFare = 0;
+		 
+			var totalFare = 0;
             var tbl = document.getElementById("tableId");
             for (var i = 1; i < tbl.rows.length; i++) {
-                debugger;
+                
                 var row = tbl.rows[i];
                 var destCell = row.cells[3];
                 var genderCell = row.cells[2];
