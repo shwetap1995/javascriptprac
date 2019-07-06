@@ -1,0 +1,11 @@
+table {
+  border-collapse: collapse;
+  border-color:#C0C0C0;
+
+}
+#tableHeading {
+	background-color:#4E9BC7;
+}
+#columnHeading {
+	background-color:#E5EDF6;
+}

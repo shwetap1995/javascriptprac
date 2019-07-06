@@ -1,12 +1,19 @@
 <html>
-
+	<head>
+	<link rel="stylesheet" type="text/css" href="form.css">
+	</head>
 <body onload="myFunction()">
-    <button type="button" onclick="addFiled()">Add Passenger</button>
+    <button type="button" onclick="addFiled()">Add Passenger</button><br>
     <!--<button type="button" onclick="deleteFiled()">delete Passenger</button>-->
     <br>
 
     <table border="bold" id="tableId">
-        <tr>
+	<tr>
+	<th id="tableHeading" colspan="4"> 
+	Passenger Details...
+	</th>
+	</tr>
+        <tr id="columnHeading">
             <th>Name</th>
             <th>Age</th>
             <th>Gender</th>
@@ -20,7 +27,7 @@
     <script>
 		function myFunction() {
 			var x = document.getElementById("tableId").rows.length;
-			if(x == 1){
+			if(x == 2){
 				document.getElementById("fareButton").disabled = true;
 			}
 		}	
@@ -99,7 +106,7 @@
 		 
 			var totalFare = 0;
             var tbl = document.getElementById("tableId");
-            for (var i = 1; i < tbl.rows.length; i++) {
+            for (var i = 2; i < tbl.rows.length; i++) {
                 
                 var row = tbl.rows[i];
                 var destCell = row.cells[3];
