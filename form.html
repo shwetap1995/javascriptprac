@@ -1,23 +1,23 @@
 <html>
-	<body>
-		<button type="button" onclick="addFiled()">Add Passenger</button>
-		<button type="button" onclick="deleteFiled()">delete Passenger</button>
-		<br>
 
-			<table border="bold" id="tableId">
-				<tr>
-					<th>Name</th>
-					<th>Age</th>
-					<th>Gender</th>
-					<th>City</th>
-				</tr>
+<body>
+    <button type="button" onclick="addFiled()">Add Passenger</button>
+    <button type="button" onclick="deleteFiled()">delete Passenger</button>
+    <br>
 
-			</table>
-			<br>
-				<button type="button" onclick="fare()">Calculate Fare</button>
+    <table border="bold" id="tableId">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>City</th>
+        </tr>
 
-				<script>
+    </table>
+    <br>
+    <button type="button" onclick="fare()">Calculate Fare</button>
 
+    <script>
         function addFiled() {
             var table = document.getElementById("tableId");
             var rowCount = table.rows.length;
@@ -87,39 +87,56 @@
             cityCell.appendChild(citySelect);
 
         }
-		 function fare() {
-			var totalFare = 0;
-            var tbl = document.getElementById("tableId");
-			for(var i = 1; i < tbl.rows.length; i++) {	
-				var row =tbl.rows[i];
-				var destCell = row.cells[3];
-				var genderCell = row.cells[2];
-				var ageCell = row.cells[1];
-				var destChild = destCell.children;
-				var genderChild = genderCell.children;
-				var ageChild = ageCell.children;
-				var destSelect =destChild[0];
-				var genderSelect =genderChild[0];
-				var ageTextbox =destChild[0];
-				var age = ageTextbox.value;
-				var destSelectedIndex = destSelect.selectedIndex;
-				var genderSelectedIndex = genderSelect.selectedIndex;
-				var destSeletedOption = destSelect.options[destSelectedIndex];
-				var genderSeletedOption = genderSelect.options[genderSelectedIndex];
-				var fareValue = destSeletedOption.getAttribute("value");
-				var gender = genderSeletedOption.getAttribute("value");
-				var fare = parseInt(fareValue);
-				if(age < 3)
-				{
-				fare =0;
-				}
-				debugger;
-				}
-				
-				alert(fare);
-				
-		}
-						</script>
-					</body>
 
-				</html>
+        function fare() {
+            var totalFare = 0;
+            var tbl = document.getElementById("tableId");
+            for (var i = 1; i < tbl.rows.length; i++) {
+                debugger;
+                var row = tbl.rows[i];
+                var destCell = row.cells[3];
+                var genderCell = row.cells[2];
+                var ageCell = row.cells[1];
+                var destChild = destCell.children;
+                var genderChild = genderCell.children;
+                var ageChild = ageCell.children;
+                var destSelect = destChild[0];
+                var genderSelect = genderChild[0];
+                var ageTextbox = ageChild[0];
+                var age = ageTextbox.value;
+                var destSelectedIndex = destSelect.selectedIndex;
+                var genderSelectedIndex = genderSelect.selectedIndex;
+                var destSeletedOption = destSelect.options[destSelectedIndex];
+                var genderSeletedOption = genderSelect.options[genderSelectedIndex];
+                var fareValue = destSeletedOption.getAttribute("value");
+                var gender = genderSeletedOption.getAttribute("value");
+                var fare = parseInt(fareValue);
+				 if(age <=0){
+					alert("age is wrong");
+					return false;
+					}
+                if (age < 3) {
+                    fare = 0;
+                } else if (3 <= age && age <= 10) {
+                    fare = fare / 2;
+                } else if (gender == "male") {
+                    if (10 <= age && age <= 60) {
+                        fare = fare;
+                    } else {
+                        fare = fare / 2;
+                    }
+                } else if (gender == "female") {
+                    if (10 <= age && age <= 50) {
+                        fare = fare;
+                    } else {
+                        fare = fare / 2;
+                    }
+                } else alert("invalid choice");
+				totalFare = totalFare + fare;
+            }
+            alert(totalFare);
+        }
+    </script>
+</body>
+
+</html>
