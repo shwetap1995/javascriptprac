@@ -91,19 +91,33 @@
 			var totalFare = 0;
             var tbl = document.getElementById("tableId");
 			for(var i = 1; i < tbl.rows.length; i++) {	
-				var row =tbl.rows[1];
+				var row =tbl.rows[i];
 				var destCell = row.cells[3];
+				var genderCell = row.cells[2];
+				var ageCell = row.cells[1];
 				var destChild = destCell.children;
+				var genderChild = genderCell.children;
+				var ageChild = ageCell.children;
 				var destSelect =destChild[0];
-				var selectedIndex = destSelect.selectedIndex;
-				var seletedOption = destSelect.options[selectedIndex];
-				var fareValue = seletedOption.getAttribute("value");
+				var genderSelect =genderChild[0];
+				var ageTextbox =destChild[0];
+				var age = ageTextbox.value;
+				var destSelectedIndex = destSelect.selectedIndex;
+				var genderSelectedIndex = genderSelect.selectedIndex;
+				var destSeletedOption = destSelect.options[destSelectedIndex];
+				var genderSeletedOption = genderSelect.options[genderSelectedIndex];
+				var fareValue = destSeletedOption.getAttribute("value");
+				var gender = genderSeletedOption.getAttribute("value");
 				var fare = parseInt(fareValue);
-				 totalFare = totalFare + fare;
+				if(age < 3)
+				{
+				fare =0;
+				}
 				debugger;
 				}
-
-				alert(totalFare);
+				
+				alert(fare);
+				
 		}
 						</script>
 					</body>
