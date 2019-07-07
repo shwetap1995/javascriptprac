@@ -1,18 +1,21 @@
 <html>
-	<head>
-	<link rel="stylesheet" type="text/css" href="form.css">
-	</head>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="form.css">
+</head>
+
 <body onload="myFunction()">
-    <button type="button" onclick="addFiled()">Add Passenger</button><br>
+    <button type="button" onclick="addFiled()">Add Passenger</button>
+    <br>
     <!--<button type="button" onclick="deleteFiled()">delete Passenger</button>-->
     <br>
 
     <table border="bold" id="tableId">
-	<tr>
-	<th id="tableHeading" colspan="4"> 
-	Passenger Details...
-	</th>
-	</tr>
+        <tr>
+            <th id="tableHeading" colspan="4">
+                Passenger Details...
+            </th>
+        </tr>
         <tr id="columnHeading">
             <th>Name</th>
             <th>Age</th>
@@ -25,30 +28,35 @@
     <button id="fareButton" type="button" onclick="fare()">Calculate Fare</button>
 
     <script>
-		function myFunction() {
-			var x = document.getElementById("tableId").rows.length;
-			if(x == 2){
-				document.getElementById("fareButton").disabled = true;
-			}
-		}	
-        function addFiled() {
-			document.getElementById("fareButton").disabled = false;
-            var table = document.getElementById("tableId");
-            var rowCount = table.rows.length;
-            var row = table.insertRow(rowCount);
+		
+        function myFunction() {
+			var x;
+             x = document.getElementById("tableId").rows.length;
+            if (x == 2) {
+                document.getElementById("fareButton").disabled = true;
+            }
+        }
 
-            var nameCell = row.insertCell(0);
-            var nameInput = document.createElement("input");
+        function addFiled() {
+			var table,rowCount,row,nameCell,nameInput,ageCell,ageInput,
+			genderCell,genderSelect,cityCell,citySelect;
+            document.getElementById("fareButton").disabled = false;
+            table = document.getElementById("tableId");
+            rowCount = table.rows.length;
+            row = table.insertRow(rowCount);
+
+            nameCell = row.insertCell(0);
+            nameInput = document.createElement("input");
             nameInput.type = "text";
             nameCell.appendChild(nameInput);
 
-            var ageCell = row.insertCell(1);
-            var ageInput = document.createElement("input");
+            ageCell = row.insertCell(1);
+            ageInput = document.createElement("input");
             ageInput.type = "number";
             ageCell.appendChild(ageInput);
 
-            var genderCell = row.insertCell(2);
-            var genderSelect = document.createElement("select");
+            genderCell = row.insertCell(2);
+            genderSelect = document.createElement("select");
 
             option = document.createElement("option");
             option.setAttribute("value", "select");
@@ -71,8 +79,8 @@
             genderSelect.appendChild(option);
             genderCell.appendChild(genderSelect);
 
-            var cityCell = row.insertCell(3);
-            var citySelect = document.createElement("select");
+            cityCell = row.insertCell(3);
+            citySelect = document.createElement("select");
 
             option = document.createElement("option");
             option.setAttribute("value", "0");
@@ -103,33 +111,36 @@
         }
 
         function fare() {
-		 
-			var totalFare = 0;
-            var tbl = document.getElementById("tableId");
+			var totalFare,tbl,row,destCell,genderCell,ageCell,destChild,
+			genderChild,ageChild,destSelect,genderSelect,ageTextbox,age,
+			destSelectedIndex,genderSelectedIndex,destSeletedOption,
+			genderSeletedOption,fareValue,gender,fare;
+            totalFare = 0;
+            tbl = document.getElementById("tableId");
             for (var i = 2; i < tbl.rows.length; i++) {
-                
-                var row = tbl.rows[i];
-                var destCell = row.cells[3];
-                var genderCell = row.cells[2];
-                var ageCell = row.cells[1];
-                var destChild = destCell.children;
-                var genderChild = genderCell.children;
-                var ageChild = ageCell.children;
-                var destSelect = destChild[0];
-                var genderSelect = genderChild[0];
-                var ageTextbox = ageChild[0];
-                var age = ageTextbox.value;
-                var destSelectedIndex = destSelect.selectedIndex;
-                var genderSelectedIndex = genderSelect.selectedIndex;
-                var destSeletedOption = destSelect.options[destSelectedIndex];
-                var genderSeletedOption = genderSelect.options[genderSelectedIndex];
-                var fareValue = destSeletedOption.getAttribute("value");
-                var gender = genderSeletedOption.getAttribute("value");
-                var fare = parseInt(fareValue);
-				 if(age <=0){
-					alert("age is wrong");
-					return false;
-					}
+				row = tbl.rows[i];
+                destCell = row.cells[3];
+                genderCell = row.cells[2];
+                ageCell = row.cells[1];
+				
+                destChild = destCell.children;
+                genderChild = genderCell.children;
+                ageChild = ageCell.children;
+                destSelect = destChild[0];
+                genderSelect = genderChild[0];
+                ageTextbox = ageChild[0];
+                age = ageTextbox.value;
+                destSelectedIndex = destSelect.selectedIndex;
+                genderSelectedIndex = genderSelect.selectedIndex;
+                destSeletedOption = destSelect.options[destSelectedIndex];
+                genderSeletedOption = genderSelect.options[genderSelectedIndex];
+                fareValue = destSeletedOption.getAttribute("value");
+                gender = genderSeletedOption.getAttribute("value");
+                fare = parseInt(fareValue);
+                if (age <= 0) {
+                    alert("age is wrong");
+                    return false;
+                }
                 if (age < 3) {
                     fare = 0;
                 } else if (3 <= age && age <= 10) {
@@ -147,7 +158,7 @@
                         fare = fare / 2;
                     }
                 } else alert("invalid choice");
-				totalFare = totalFare + fare;
+                totalFare = totalFare + fare;
             }
             alert(totalFare);
         }
