@@ -1,0 +1,106 @@
+
+<html>
+<head>
+    <head>
+    <link rel="stylesheet" type="text/css" href="json.css">
+</head>
+</head>
+<body>
+    <button type="button" onclick="CreateTableFromJSON()">Click here</button>
+    <p id="showData">hidden
+	</p>
+</body>
+
+<script>
+    function CreateTableFromJSON() {
+	debugger;
+		var table = document.createElement("TABLE");
+		document.body.appendChild(table);
+		
+		var tableRow = document.createElement("TR");
+		var tableHeading = document.createElement("TH");
+		for (var i = 0; i < array.length; i++) {
+		      
+		tableHeading.innerHTML = array[i].name;
+		tableRow.appendChild(tableHeading);
+		alert(tableHeading);
+		}
+		
+	}
+	  <!-- table.setAttribute("id","studTable");
+	  // 
+	  // var tableData = document.createElement("TD");
+	//   table.appendChild(tableRow);
+	 //  tableRow.appendChild(tableData);
+	 //  for(var i = 0;i <= array.length;i++)
+	//   {
+	   
+	//   }
+	//   alert(array.length);
+	//   }
+	   var array=[{
+		"name": "Abhishek",
+		"city": "Jalgaon",
+		"education": "pharma",
+		"age": 22,
+		"gendar": "male"
+	},
+	{
+		"name": "Dolly",
+		"city": "Jalgaon",
+		"education": "BBA",
+		"age": 29,
+		"gendar": "female"
+	},
+	{
+		"name": "Nayan",
+		"city": "Dhule",
+		"education": "agri",
+		"age": 19,
+		"gendar": "male"
+	},
+	{
+		"name": "Priyanka",
+		"city": "Jalgaon",
+		"education": "BE",
+		"age": 24,
+		"gendar": "female"
+	},
+	{
+		"name": "Bhushan",
+		"city": "Mumbai",
+		"education": "BE",
+		"age": 31,
+		"gendar": "male"
+	},
+	{
+		"name": "Niku",
+		"city": "Raver",
+		"education": "pharma",
+		"age": 27,
+		"gendar": "male"
+	},
+	{
+		"name": "Shivam",
+		"city": "Jalgaon",
+		"education": "BE",
+		"age": 24,
+		"gendar": "male"
+	},
+	{
+		"name": "Apoorva",
+		"city": "Pune",
+		"education": "BE",
+		"age": 26,
+		"gendar": "female"
+	},
+	{
+		"name": "Shwetambari",
+		"city": "Mumbai",
+		"education": "MCA",
+		"age": 25,
+		"gendar": "female"
+	}
+]
+</script>
+</html>
