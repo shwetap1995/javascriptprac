@@ -7,38 +7,21 @@
 </head>
 <body>
     <button type="button" onclick="CreateTableFromJSON()">Click here</button>
-    <p id="showData">hidden
-	</p>
+	<p id="demo"></p>
 </body>
 
 <script>
-    function CreateTableFromJSON() {
-	debugger;
-		var table = document.createElement("TABLE");
-		document.body.appendChild(table);
-		
-		var tableRow = document.createElement("TR");
-		var tableHeading = document.createElement("TH");
-		for (var i = 0; i < array.length; i++) {
-		      
-		tableHeading.innerHTML = array[i].name;
-		tableRow.appendChild(tableHeading);
-		alert(tableHeading);
+	function CreateTableFromJSON() {
+		var myJSON = [{"name":"John", "age":31, "city":"New York"},{"name":"a", "age":31, "city":"d York"}];
+		for(var i = 0 ;i<=myJSON.length;i++) {
+			var obj = myJSON[i];
+			alert(obj.name);
 		}
-		
-	}
-	  <!-- table.setAttribute("id","studTable");
-	  // 
-	  // var tableData = document.createElement("TD");
-	//   table.appendChild(tableRow);
-	 //  tableRow.appendChild(tableData);
-	 //  for(var i = 0;i <= array.length;i++)
-	//   {
-	   
-	//   }
-	//   alert(array.length);
-	//   }
-	   var array=[{
+/*
+var myObj = JSON.parse(myJSON);
+alert(myObj.name);
+//document.getElementById("demo").innerHTML = myObj.name[0];
+	   var arr=[{
 		"name": "Abhishek",
 		"city": "Jalgaon",
 		"education": "pharma",
@@ -101,6 +84,7 @@
 		"age": 25,
 		"gendar": "female"
 	}
-]
+]*/
+}
 </script>
 </html>
