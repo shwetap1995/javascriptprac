@@ -20,7 +20,7 @@
 
 <script>
 	function CreateTableFromJSON() {
-	debugger;
+	
 		//var myJSON = [{"name":"John", "age":31, "city":"New York"},{"name":"a", "age":31, "city":"d York"}];
 		
 		
@@ -115,8 +115,12 @@ var table= document.getElementById("tableId");
 		row.appendChild(cell3);
 		row.appendChild(cell4);
 		row.appendChild(cell5);
-		
+		debugger;
+		if(cell4.innerHTML >= 25) {
+		cell4.style.color="red";
 		}
+		}
+		
 		
 }
 </script>
