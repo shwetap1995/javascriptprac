@@ -7,84 +7,117 @@
 </head>
 <body>
     <button type="button" onclick="CreateTableFromJSON()">Click here</button>
-	<p id="demo"></p>
+	<table border="bold" id="tableId">
+	<tr>
+	<th>name</th>
+	<th>city</th>
+	<th>education</th>
+	<th>age</th>
+	<th>gender</th>
+	</tr>
+	</table>
 </body>
 
 <script>
 	function CreateTableFromJSON() {
-		var myJSON = [{"name":"John", "age":31, "city":"New York"},{"name":"a", "age":31, "city":"d York"}];
-		for(var i = 0 ;i<=myJSON.length;i++) {
-			var obj = myJSON[i];
-			alert(obj.name);
-		}
-/*
-var myObj = JSON.parse(myJSON);
-alert(myObj.name);
-//document.getElementById("demo").innerHTML = myObj.name[0];
-	   var arr=[{
+	debugger;
+		//var myJSON = [{"name":"John", "age":31, "city":"New York"},{"name":"a", "age":31, "city":"d York"}];
+		
+		
+		
+	
+	
+	   var myJSON=[{
 		"name": "Abhishek",
 		"city": "Jalgaon",
 		"education": "pharma",
 		"age": 22,
-		"gendar": "male"
+		"gender": "male"
 	},
 	{
 		"name": "Dolly",
 		"city": "Jalgaon",
 		"education": "BBA",
 		"age": 29,
-		"gendar": "female"
+		"gender": "female"
 	},
 	{
 		"name": "Nayan",
 		"city": "Dhule",
 		"education": "agri",
 		"age": 19,
-		"gendar": "male"
+		"gender": "male"
 	},
 	{
 		"name": "Priyanka",
 		"city": "Jalgaon",
 		"education": "BE",
 		"age": 24,
-		"gendar": "female"
+		"gender": "female"
 	},
 	{
 		"name": "Bhushan",
 		"city": "Mumbai",
 		"education": "BE",
 		"age": 31,
-		"gendar": "male"
+		"gender": "male"
 	},
 	{
 		"name": "Niku",
 		"city": "Raver",
 		"education": "pharma",
 		"age": 27,
-		"gendar": "male"
+		"gender": "male"
 	},
 	{
 		"name": "Shivam",
 		"city": "Jalgaon",
 		"education": "BE",
 		"age": 24,
-		"gendar": "male"
+		"gender": "male"
 	},
 	{
 		"name": "Apoorva",
 		"city": "Pune",
 		"education": "BE",
 		"age": 26,
-		"gendar": "female"
+		"gender": "female"
 	},
 	{
 		"name": "Shwetambari",
 		"city": "Mumbai",
 		"education": "MCA",
 		"age": 25,
-		"gendar": "female"
+		"gender": "female"
 	}
-]*/
+];
+var table= document.getElementById("tableId");
+		
+		for(var i = 0 ;i <  myJSON.length;i++) {
+		/*var row = table.insertRow(i+1);
+		var cell1 = row.insertCell(0).innerHTML=myJSON[i].name;
+		var cell2 = row.insertCell(1).innerHTML=myJSON[i].age;
+		var cell3 = row.insertCell(2).innerHTML=myJSON[i].city;*/
+		var row = document.createElement("tr");
+		var cell1 = document.createElement("td");
+		cell1.innerHTML=myJSON[i].name;
+		var cell2 = document.createElement("td");
+		cell2.innerHTML=myJSON[i].city;
+		var cell3 = document.createElement("td");	
+		cell3.innerHTML=myJSON[i].education;
+		var cell4 = document.createElement("td");
+		cell4.innerHTML=myJSON[i].age;
+		var cell5 = document.createElement("td");
+		cell5.innerHTML=myJSON[i].gender;
+		table.appendChild(row);
+		row.appendChild(cell1);
+		row.appendChild(cell2);
+		row.appendChild(cell3);
+		row.appendChild(cell4);
+		row.appendChild(cell5);
+		
+		}
+		
 }
 </script>
 </html>
