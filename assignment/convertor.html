@@ -47,7 +47,56 @@
           var millimeters = txtValue * 1000000;
            document.getElementById("txt2").value  = millimeters;
         }
-    }
+         if (selectedFromOption == 1 && selectedToOption == 0) {
+          var kilometers = txtValue * 0.001;
+           document.getElementById("txt2").value  = kilometers;
+        }
+         if (selectedFromOption == 1 && selectedToOption == 1) {
+          var metre = parseInt(txtValue);
+           document.getElementById("txt2").value  = metre;
+        }
+         if (selectedFromOption == 1 && selectedToOption == 2) {
+          var centimeters = txtValue * 100;
+           document.getElementById("txt2").value  = centimeters;
+        }
+         if (selectedFromOption == 1 && selectedToOption == 3) {
+            var millimeters = txtValue * 1000;
+           document.getElementById("txt2").value  = millimeters;
+        }
+         if (selectedFromOption == 2 && selectedToOption == 0) {
+          var kilometers = txtValue * 1.0E-5;
+           document.getElementById("txt2").value  = kilometers;
+        }
+         if (selectedFromOption == 2 && selectedToOption == 1) {
+            var meters = txtValue * 0.01;
+           document.getElementById("txt2").value  = meters;
+        }
+         if (selectedFromOption == 2 && selectedToOption == 2) {
+          var centimeters = parseInt(txtValue);
+           document.getElementById("txt2").value  = centimeters;
+        }
+         if (selectedFromOption == 2 && selectedToOption == 3) {
+          var millimeters = txtValue * 10;
+          document.getElementById("txt2").value  = millimeters;
+        }
+         if (selectedFromOption == 3 && selectedToOption == 0) {
+            var kilometers = txtValue * 1.0E-6;
+           document.getElementById("txt2").value  = kilometers;
+        }
+         if (selectedFromOption == 3 && selectedToOption == 1) {
+          var meters = txtValue * 0.001;
+          document.getElementById("txt2").value  = millimeters;
+        }
+         if (selectedFromOption == 3 && selectedToOption == 2) {
+          var centimeters = txtValue * 0.1;
+          document.getElementById("txt2").value  = centimeters;
+        }
+         if (selectedFromOption == 3 && selectedToOption == 3) {
+         var millimeters = parseInt(txtValue);
+           document.getElementById("txt2").value  = millimeters;
+        }
+     }
+        
     </script>
 </body>
 </html>
