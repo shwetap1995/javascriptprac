@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    	<title></title>
+</head>
+<body>
+<button onclick="myFunction()">test start</button>
+<script type="text/javascript">
+    var arr = [{
+        "question": "Name of the capital of India",
+        "score": 1,
+        "ans": [{
+            "text": "Delhi",
+            "isCorrect": true
+        }, {
+            "text": "Mumbai",
+            "isCorrect": false
+        }, {
+            "text": "Chennai",
+            "isCorrect": false
+        }, {
+            "text": "Bhopal",
+            "isCorrect": false
+        }]
+    },
+    {
+        "question": "Name of the capital of Maharashtra",
+        "score": 1,
+        "ans": [{
+            "text": "Delhi",
+            "isCorrect": false
+        }, {
+            "text": "Mumbai",
+            "isCorrect": true
+        }, {
+            "text": "Chennai",
+            "isCorrect": false
+        }, {
+            "text": "Bhopal",
+            "isCorrect": false
+        }]
+    },
+    {
+        "question": "Name of the Prime Minister of India",
+        "score": 1,
+        "ans": [{
+            "text": "Rahul Gandhi",
+            "isCorrect": false
+        }, {
+            "text": "Aanand Rathi",
+            "isCorrect": false
+        }, {
+            "text": "Narendra Modi",
+            "isCorrect": true
+        }, {
+            "text": "Bhushan Patil",
+            "isCorrect": false
+        }]
+    },
+    {
+        "question": "Name of the CM of Maharahstra",
+        "score": 2,
+        "ans": [{
+            "text": "Devendra F",
+            "isCorrect": true
+        }, {
+            "text": "Ranesh Mali",
+            "isCorrect": false
+        }, {
+            "text": "Ganesh Takala",
+            "isCorrect": false
+        }, {
+            "text": "Surama Bhopali",
+            "isCorrect": false
+        }]
+    }, {
+        "question": "Name of the president of India",
+        "score": 3,
+        "ans": [{
+            "text": "Pranab Da",
+            "isCorrect": false
+        }, {
+            "text": "APJ Kalam",
+            "isCorrect": false
+        }, {
+            "text": "Ram Kovind",
+            "isCorrect": false
+        }, {
+            "text": "Bhopal",
+            "isCorrect": false
+        }]
+    }
+]
+
+function myFunction() {
+    
+    var tbl = document.createElement("table");
+    document.body.appendChild(tbl);
+    tbl.setAttribute("border", "1");
+    for (var i = 0; i < arr.length; i++) {
+        var row = document.createElement("tr");
+        tbl.appendChild(row);
+        var cell1 = document.createElement("td");
+        row.appendChild(cell1);
+        cell1.innerHTML = arr[i].question;
+        var cell2 = document.createElement("td");
+        row.appendChild(cell2);
+        cell2.innerHTML = arr[i].score;
+        var cell3 = document.createElement("td");
+        row.appendChild(cell3);
+        debugger;
+        var radioButton1 = document.createElement("input");
+        radioButton1.setAttribute("type", "radio");
+        radioButton1.setAttribute("value",x);
+        cell3.appendChild(radioButton1);
+        var para = document.createElement("p");
+        para.setAttribute("id","para1");
+        cell3.appendChild(para);
+        para.innerHTML="Delhi";
+
+        var cell4 = document.createElement("td");
+        row.appendChild(cell4);
+        var x = arr[0].ans[1];
+        var radioButton2 = document.createElement("input");
+        radioButton2.setAttribute("type", "radio");
+        radioButton2.setAttribute("value",x);
+        cell4.appendChild(radioButton2);
+        var para = document.createElement("p");
+        para.setAttribute("id","para1");
+        cell4.appendChild(para);
+        para.innerHTML="Mumbai"; 
+
+        var cell5 = document.createElement("td");
+        row.appendChild(cell5);
+        var x = arr[0].ans[2];
+        var radioButton3 = document.createElement("input");
+        radioButton3.setAttribute("type", "radio");
+        radioButton3.setAttribute("value",x);
+        cell5.appendChild(radioButton3);
+        var para = document.createElement("p");
+        para.setAttribute("id","para1");
+        cell5.appendChild(para);
+        para.innerHTML="Chennai"; 
+
+        var cell6 = document.createElement("td");
+        row.appendChild(cell6);
+        var x = arr[0].ans[3];
+        var radioButton4 = document.createElement("input");
+        radioButton4.setAttribute("type", "radio");
+        radioButton4.setAttribute("value",x);
+        cell6.appendChild(radioButton4);
+        var para = document.createElement("p");
+        para.setAttribute("id","para1");
+        cell6.appendChild(para);
+        para.innerHTML="Bhopal"; 
+    }
+}
+</script>
+</body>
+</html>
