@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <p id="demo">
+        
+    </p>
+    <input type="text" id="txt1"></input>
+    <select id="fromSelect">
+        <option value="Kilometre">Kilometre</option>
+        <option value="Metre">Metre</option>
+        <option value="centimetre">Centimetre</option>
+        <option value="Millimetre">Millimetre</option>
+    </select>
+    <input type="text" id="txt2"></input>
+    <select id="toSelect">
+        <option value="Kilometre">Kilometre</option>
+        <option value="Metre">Metre</option>
+        <option value="Centimetre">Centimetre</option>
+        <option value="Millimetre">Millimetre</option>
+    </select>
+    <button onclick="myFunction()">click here</button>
+    <script type="text/javascript">
+      
+       function myFunction() {
+          debugger;
+        var txtValue = document.getElementById('txt1').value;
+        var selectedFromOption = fromSelect.selectedIndex;
+        var selectedToOption = toSelect.selectedIndex;
+        //alert(selectedFromOption);
+        //alert(selectedToOption);
+        if (selectedFromOption == 0 && selectedToOption == 0) {
+            var kilometre = parseInt(txtValue);
+           document.getElementById("txt2").value  = kilometre;
+        }
+        if (selectedFromOption == 0 && selectedToOption == 1) {
+           var meters = txtValue * 1000;
+           document.getElementById("txt2").value  = meters;
+        }
+       if (selectedFromOption == 0 && selectedToOption == 2) {
+          var centimeters = txtValue * 100000;
+           document.getElementById("txt2").value  = centimeters;
+        }
+        if (selectedFromOption == 0 && selectedToOption == 3) {
+          var millimeters = txtValue * 1000000;
+           document.getElementById("txt2").value  = millimeters;
+        }
+    }
+    </script>
+</body>
+</html>
