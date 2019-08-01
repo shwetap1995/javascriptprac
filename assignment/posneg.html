@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<input type="text" id="txt1"><br><br>
+<button onclick="myFun()">Click here</button>
+<script>
+	function myFun() {
+		debugger;
+	var x = document.getElementById("txt1").value;
+		
+	var no = parseInt(x);
+		
+	if(no > 0) {
+		alert(no + " is positive");
+	}
+
+	if(no < 0) {
+		alert(no + " is negative");
+	}
+	if(no == 0) {
+	alert(no + " no is zero which is not positive not negative");
+}
+}
+</script>
+</body>
+</html>
