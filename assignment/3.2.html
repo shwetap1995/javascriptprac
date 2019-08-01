@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+Roll No:<input type="text" id="txt1"><br><br>
+Subject:<input type="text" id="txt2">
+<input type="text" id="txt3">
+<input type="text" id="txt4">
+<button onclick="myFun()">Click here</button>
+<script>
+	function myFun() {
+		debugger;
+	var w = document.getElementById("txt1").value;
+	var x = document.getElementById("txt2").value;
+	var y = document.getElementById("txt3").value;
+	var z = document.getElementById("txt4").value;
+	var rollno = parseInt(w);
+	var sub1 = parseInt(x);
+	var sub2 = parseInt(y);
+	var sub3 = parseInt(z);
+	var total = sub1+sub2+sub3;
+	var avg = total/3;
+	if(avg >=60) {
+		alert("Grade A");
+	}
+	else if(avg <60 && avg >=50) {
+		alert("Grade B");
+	}
+	else if(avg < 50 && avg >=40) {
+		alert("Grade C");
+	}
+	else
+	{
+		alert("Grade F");
+	}
+}
+</script>
+</body>
+</html>
