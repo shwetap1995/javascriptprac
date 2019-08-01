@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<input type="text" id="txt1">
+<input type="text" id="txt2">
+<input type="text" id="txt3">
+<button onclick="myFun()">Click here</button>
+<script>
+	function myFun() {
+		debugger;
+		var x = document.getElementById("txt1").value;
+		var y = document.getElementById("txt2").value;
+		var z = document.getElementById("txt3").value;
+		
+		var no1 = parseFloat(x);
+		var no2 = parseFloat(y);
+		var no3 = parseFloat(z);
+
+		for(var i =0 ;i<3;i++) {
+		if(no1 > no2) {
+			var temp = no1;
+			no1 = no2;
+			no2 = temp;
+		}
+		if(no2>no3){
+			var temp = no2;
+			no2 = no3;
+			no3=temp;
+		}		
+	}
+		alert("numbers in ascending order: "+no1+"," + no2+","+no3);
+		for(var i =0 ;i<3;i++) {
+		if(no1 < no2) {
+			var temp = no1;
+			no1 = no2;
+			no2 = temp;
+		}
+		if(no2 < no3){
+			var temp = no2;
+			no2 = no3;
+			no3=temp;
+		}		
+	}
+	alert("numbers in decending order: "+no1+"," + no2+","+no3);
+	}
+</script>
+</body>
+</html>
