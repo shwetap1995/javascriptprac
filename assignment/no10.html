@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<input type="text" id="txt1"><br><br>
+<button onclick="myFun()">Click here</button>
+<script>
+	function myFun() {
+		debugger;
+	var x = document.getElementById("txt1").value;
+		
+	var no = parseInt(x);
+		
+	if(no > 10) {
+		alert("number is greater than 10");
+	}
+
+	if(10 > no) {
+		alert("number is less than 10");
+	}
+	if(no == 10) {
+	alert("number is 10");
+}
+}
+</script>
+</body>
+</html>
