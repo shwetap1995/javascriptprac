@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<input type="text" id="txt1"><br><br>
+<button onclick="myFun()">Click here</button>
+<script>
+	function myFun() {
+		debugger;
+	var x = document.getElementById("txt1").value;
+		
+	var no = parseInt(x);
+		
+	if(no%2 ==0) {
+		alert("number is even");
+	}
+
+	if(no%2 !=0) {
+		alert("number is odd");
+	}
+	}
+</script>
+</body>
+</html>
