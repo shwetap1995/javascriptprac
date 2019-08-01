@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<input type="text" id="txt1">
+<button onclick="myFun()">Click here</button>
+<script>
+	function myFun() {
+		debugger;
+		var x = document.getElementById("txt1").value;
+		var no = parseFloat(x);
+		
+	var square =no*no;
+	var cube =no*no*no;
+	alert("square is: "+square+" cube is:"+cube);
+	}
+</script>
+</body>
+</html>
