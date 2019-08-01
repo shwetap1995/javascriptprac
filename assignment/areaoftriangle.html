@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<input type="text" id="txt1">
+<input type="text" id="txt2">
+<button onclick="myFun()">Click here</button>
+<script>
+	function myFun() {
+		debugger;
+		var x = document.getElementById("txt1").value;
+		var y = document.getElementById("txt2").value;
+		var base = parseFloat(x);
+		var height = parseFloat(y);
+	
+	var triangle = 0.5*base*height;
+	alert(triangle);
+	}
+</script>
+</body>
+</html>
