@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+Marital Status:<input type="text" id="txt1"><br><br>
+Gender:<input type="text" id="txt2">
+Age:<input type="text" id="txt3">
+<button onclick="myFun()">Click here</button>
+<script type="text/javascript">
+	function myFun() {
+		debugger;
+	var Status= document.getElementById("txt1").value;
+	var gender = document.getElementById("txt2").value;
+	var x = document.getElementById("txt3").value;
+	var age = parseInt(x);
+	if(gender=='m'||gender=='M'||gender=='male'||gender=='Male') {
+		if(age>=21) {
+		alert("eligible for marriage");
+	}
+}
+	else if(gender=='f'||gender=='F'||gender=='female'||gender=='Female') {
+		if(age>=18) {
+		alert("eligible for marriage");
+	}
+}
+	else
+	{
+		alert("not eligible for marriage");
+	}
+}
+</script>
+</body>
+</html>
