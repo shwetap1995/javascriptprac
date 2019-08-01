@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<input type="text" id="txt1"><br><br>
+<button onclick="myFun()">Click here</button>
+<script>
+	function myFun() {
+		debugger;
+	var x = document.getElementById("txt1").value;
+		
+	var no = parseInt(x);
+		
+	if(no%7 ==0) {
+		alert("number is multiply by 7");
+	}
+
+	else {
+		alert("number is not multiply by 7");
+	}
+	}
+</script>
+</body>
+</html>
