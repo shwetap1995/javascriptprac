@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<input type="text" id="txt1">
+<button onclick="myFun()">Click here</button>
+<script>
+	function myFun() {
+		debugger;
+		var pi = 3.142;
+	var x = document.getElementById("txt1").value;
+	
+	var radius = parseFloat(x);
+	
+	var circle = pi*radius*radius;
+	alert(circle);
+	}
+</script>
+</body>
+</html>
