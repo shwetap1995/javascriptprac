@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<input type="text" id="txt1">
+<input type="text" id="txt2">
+<button onclick="myFun()">Click here</button>
+<script>
+	function myFun() {
+		debugger;
+		var x = document.getElementById("txt1").value;
+		var y = document.getElementById("txt2").value;
+		
+		var no1 = parseFloat(x);
+		var no2 = parseFloat(y);
+
+		var temp = no1;
+		no1 = no2;
+		no2 = temp;
+		
+		alert("after exchange no are: "+no1+" and " +no2);
+	}
+</script>
+</body>
+</html>
