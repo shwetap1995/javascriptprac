@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<input type="text" id="txt1">
+<button onclick="myFunction()">Click here</button>
+<p id="demo"></p>
+<script type="text/javascript">
+	function myFunction() {
+		debugger;
+		
+	var x = document.getElementById("txt1").value;
+	var no = parseInt(x);
+	var table = no+"<br>";
+	for(var i =2;i<=10;i++) {
+		 var mul= no *i;
+		 table +=mul+"<br>";
+	}
+	document.getElementById("demo").innerHTML=table;
+}
+	
+	
+
+</script>
+</body>
+</html>
