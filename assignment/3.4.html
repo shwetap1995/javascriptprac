@@ -10,11 +10,14 @@
 <script type="text/javascript">
 	function myFunction() {
 		debugger;
-		var string = 1 +"<br>";
+		var string = 1+"<br>" ;
 	var x = document.getElementById("txt1").value;
 	var no = parseInt(x);
-	for(var i =2;i<=no;i++) {
-		  string += i+"<br>";
+	var i=2;
+	while( i <= no) {
+		   string += i+"<br>";
+		   i++;
+
 	}
 	document.getElementById("demo").innerHTML=string;
 }
