@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<input type="text" id="txt1">
+<button onclick="myFunction()">Click here</button>
+<p id="demo"></p>
+<script type="text/javascript">
+	function myFunction() {
+		debugger;
+		var rev=0;
+	var x = document.getElementById("txt1").value;
+	var no = parseInt(x);
+	while(no > 0){
+	rem = parseInt(no % 10);
+	
+	rev = rev * 10 + rem;
+	no = parseInt(no / 10);
+
+	
+}
+	
+	document.getElementById("demo").innerHTML=rev;
+}
+</script>
+</body>
+</html>
