@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<input type="text" id="txt1">
+<button onclick="myFun()">Click here</button>
+<p id="demo"></p>
+<script type="text/javascript">
+	function myFun() {
+		debugger;
+		var count=0;var total =0;
+	var x = document.getElementById("txt1").value;
+	var no = parseInt(x);
+	var temp = no;
+	var userno = no;
+	while(no > 0) {
+	var no = parseInt(no / 10);
+	count++;
+}
+while(temp > 0) {
+	var mod = parseInt(temp % 10);
+	 total = total + (mod**count);
+	temp = parseInt(temp/10);
+}
+if(total == userno){
+document.getElementById("demo").innerHTML=userno +" is a amstrong";
+}
+else {
+	document.getElementById("demo").innerHTML=userno +" is not a amstrong";
+}
+}
+</script>
+</body>
+</html>
